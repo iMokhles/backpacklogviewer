@@ -1,6 +1,6 @@
 <?php
 
-namespace EduardoArandaH\BackpackLogViewer\Commands;
+namespace iMokhles\BackpackLogViewer\Commands;
 
 use Illuminate\Console\Command;
 

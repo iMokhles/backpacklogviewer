@@ -1,6 +1,6 @@
 <?php
 
-namespace EduardoArandaH\BackpackLogViewer;
+namespace iMokhles\BackpackLogViewer;
 
 use Illuminate\Support\ServiceProvider;
 

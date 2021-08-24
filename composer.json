@@ -1,40 +1,41 @@
 {
-    "name": "eduardoarandah/backpacklogviewer",
+    "name": "imokhles/backpacklogviewer",
     "type": "library",
     "description": "Integrate ArcaneDev/LogViewer in your Laravel-Backpack project",
     "keywords": [
-        "EduardoArandaH",
+        "Mokhlas",
+        "Mokhlas Hussein",
         "Laravel",
         "Laravel Backpack",
         "Log Viewer"
     ],
-    "homepage": "https://github.com/eduardoarandah/backpacklogviewer",
+    "homepage": "https://github.com/imokhles/backpacklogviewer",
     "license": "MIT",
     "authors": [
         {
-            "name": "Eduardo Aranda Hernandez",
-            "email": "eduardoarandah@gmail.com",
-            "homepage": "https://eduardoarandah.github.io/",
+            "name": "Mokhlas Hussein",
+            "email": "mokhleshussien@gmail.com",
+            "homepage": "https://imokhles.github.io/",
             "role": "Developer"
         }
     ],
     "require": {
-        "illuminate/support": "~6.0",
-        "arcanedev/log-viewer": "~5.0",
-        "php":">=7.0"
+        "illuminate/support": "~6.0|~7.0|~8.0",
+        "arcanedev/log-viewer": "~8.0",
+        "php": ">=7.0"
     },
     "require-dev": {
-        "phpunit/phpunit" : ">=5.4.3",
+        "phpunit/phpunit": ">=5.4.3",
         "squizlabs/php_codesniffer": "^2.3"
     },
     "autoload": {
         "psr-4": {
-            "EduardoArandaH\\BackpackLogViewer\\": "src"
+            "iMokhles\\BackpackLogViewer\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "EduardoArandaH\\BackpackLogViewer\\": "tests"
+            "iMokhles\\BackpackLogViewer\\": "tests"
         }
     },
     "scripts": {
@@ -42,10 +43,10 @@
         "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
         "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
     },
-    "extra": {        
+    "extra": {
         "laravel": {
             "providers": [
-                "EduardoArandaH\\BackpackLogViewer\\BackpackLogViewerServiceProvider"
+                "iMokhles\\BackpackLogViewer\\BackpackLogViewerServiceProvider"
             ]
         }
     },
