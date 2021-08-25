@@ -86,7 +86,7 @@
         }
 
         .table-condensed > tbody > tr > td > p {
-          margin: 0;
+            margin: 0;
         }
 
         .stack-content {
@@ -158,32 +158,32 @@
         .info-box.level-empty {
             opacity: .6;
             -webkit-filter: grayscale(1);
-               -moz-filter: grayscale(1);
-                -ms-filter: grayscale(1);
-                    filter: grayscale(1);
+            -moz-filter: grayscale(1);
+            -ms-filter: grayscale(1);
+            filter: grayscale(1);
             -webkit-transition: all 0.2s ease-in-out;
-               -moz-transition: all 0.2s ease-in-out;
-                 -o-transition: all 0.2s ease-in-out;
-                    transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
             -webkit-transition-property: -webkit-filter, opacity;
-               -moz-transition-property: -moz-filter, opacity;
-                 -o-transition-property: filter, opacity;
-                    transition-property: -webkit-filter, -moz-filter, -o-filter, filter, opacity;
+            -moz-transition-property: -moz-filter, opacity;
+            -o-transition-property: filter, opacity;
+            transition-property: -webkit-filter, -moz-filter, -o-filter, filter, opacity;
         }
 
         .info-box.level-empty:hover {
             opacity: 1;
             -webkit-filter: grayscale(0);
-               -moz-filter: grayscale(0);
-                -ms-filter: grayscale(0);
-                    filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            filter: grayscale(0);
         }
 
         .level {
             padding: 2px 6px;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
             border-radius: 2px;
-            font-size: .9em;
+            font-size: .85em;
             font-weight: 600;
         }
 
@@ -210,7 +210,12 @@
         }
 
         .label-env {
+            padding: 2px 6px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+            border-radius: 2px;
+            font-weight: 600;
             font-size: .85em;
+            color: #FFF;
         }
 
         .badge.level-all, .level.level-all, .info-box.level-all {
@@ -263,34 +268,33 @@
     <![endif]-->
 @append
 
+@php
+    $breadcrumbs = [
+      trans('backpack::crud.admin') => backpack_url('dashboard'),
+      "Summary" => route('log-viewer::dashboard'),
+      "Logs" => route('log-viewer::logs.list'),
+    ];
+@endphp
+
 @section('header')
-    <section class="content-header">
-
-        <span class="text-muted pull-right hidden-xs">
-            LogViewer - <span class="label label-info">version {{ log_viewer()->version() }}</span>
-        </span>
-
-        <a class="logviewer-menu-item" href="{{ route('log-viewer::dashboard') }}">
-          <i class="fa fa-dashboard"></i> Summary
-        </a>
-        <a class="logviewer-menu-item" href="{{ route('log-viewer::logs.list') }}">
-          <i class="fa fa-archive"></i> Logs
-        </a>
-
+    <section class="container-fluid">
+        <h2>
+            <span class="text-capitalize">Logs</span>
+        </h2>
     </section>
 @endsection
 
 
 
 @section('after_scripts')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
-<script>
-    Chart.defaults.global.responsive      = true;
-    Chart.defaults.global.scaleFontFamily = "'Source Sans Pro'";
-    Chart.defaults.global.animationEasing = "easeOutQuart";
-</script>
-@yield('modals')
-@yield('scripts')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+    <script>
+        Chart.defaults.global.responsive      = true;
+        Chart.defaults.global.scaleFontFamily = "'Source Sans Pro'";
+        Chart.defaults.global.animationEasing = "easeOutQuart";
+    </script>
+    @yield('modals')
+    @yield('scripts')
 @append
