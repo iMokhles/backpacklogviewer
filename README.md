@@ -18,9 +18,9 @@ Make sure you have set your logs to "daily" in your .env file
 Run this commands:
 
 ```BASH
-composer require eduardoarandah/backpacklogviewer
+composer require imokhles/backpacklogviewer
 
-php artisan vendor:publish --provider="EduardoArandaH\BackpackLogViewer\BackpackLogViewerServiceProvider"
+php artisan vendor:publish --provider="iMokhles\BackpackLogViewer\BackpackLogViewerServiceProvider"
 
 php artisan backpack:add-sidebar-content "<li class='nav-item'><a class='nav-link' href='{{route(\"log-viewer::logs.list\")}}'><i class='nav-icon fa fa-history'></i> {{ trans('Logs') }}</a></li>"
 ```
